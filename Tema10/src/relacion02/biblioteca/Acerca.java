@@ -21,14 +21,16 @@ import java.awt.Font;
 public class Acerca extends JFrame implements WindowListener, ActionListener{
 
 	private JPanel contentPane;
+	private JFrame ventanaPadre;
 
 
 	/**
 	 * Create the frame.
 	 */
-	public Acerca() {
-		setTitle("Acerca");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public Acerca(JFrame ventanaPadre) {
+		setTitle("Acerca de");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.ventanaPadre = ventanaPadre;
 		setBounds(100, 100, 612, 552);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -92,13 +94,13 @@ public class Acerca extends JFrame implements WindowListener, ActionListener{
 
 	@Override
 	public void windowOpened(WindowEvent e) {
-		// TODO Apéndice de método generado automáticamente
+		ventanaPadre.enabled(false);
 		
 	}
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		// TODO Apéndice de método generado automáticamente
+		ventanaPadre.enabled(true);
 		
 	}
 
