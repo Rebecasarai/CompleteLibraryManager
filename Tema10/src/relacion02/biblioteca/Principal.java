@@ -80,7 +80,7 @@ public class Principal extends JFrame implements ActionListener, WindowListener{
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu Gestion = new JMenu("Gestión");
+		JMenu Gestion = new JMenu("GestiÃ³n");
 		menuBar.add(Gestion);
 		
 		mtmUsuarios = new JMenuItem("Usuarios");
@@ -135,7 +135,7 @@ public class Principal extends JFrame implements ActionListener, WindowListener{
 		JMenu mnListados = new JMenu("Listados");
 		menuBar.add(mnListados);
 		
-		JMenuItem mntmListarPendientes = new JMenuItem("Listar pendientes de Devolución");
+		JMenuItem mntmListarPendientes = new JMenuItem("Listar pendientes de DevoluciÃ³n");
 		mnListados.add(mntmListarPendientes);
 		
 		JMenuItem mntmListarPrestamosPor = new JMenuItem("Listar prestamos por usuarios");
@@ -197,7 +197,7 @@ public class Principal extends JFrame implements ActionListener, WindowListener{
 		JMenuItem mntmAcercaDe = new JMenuItem("Acerca de");
 		mntmAcercaDe.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Acerca();
+				new Acerca(miVentana);
 			}
 		});
 		menu.add(mntmAcercaDe);
@@ -237,7 +237,7 @@ public class Principal extends JFrame implements ActionListener, WindowListener{
 
 	@Override
 	public void windowOpened(WindowEvent e) {
-		// TODO Apéndice de método generado automáticamente
+		// TODO ApÃ©ndice de mÃ©todo generado automÃ¡ticamente
 		
 	}
 
@@ -249,31 +249,31 @@ public class Principal extends JFrame implements ActionListener, WindowListener{
 
 	@Override
 	public void windowClosed(WindowEvent e) {
-		// TODO Apéndice de método generado automáticamente
+		// TODO ApÃ©ndice de mÃ©todo generado automÃ¡ticamente
 		
 	}
 
 	@Override
 	public void windowIconified(WindowEvent e) {
-		// TODO Apéndice de método generado automáticamente
+		// TODO ApÃ©ndice de mÃ©todo generado automÃ¡ticamente
 		
 	}
 
 	@Override
 	public void windowDeiconified(WindowEvent e) {
-		// TODO Apéndice de método generado automáticamente
+		// TODO ApÃ©ndice de mÃ©todo generado automÃ¡ticamente
 		
 	}
 
 	@Override
 	public void windowActivated(WindowEvent e) {
-		// TODO Apéndice de método generado automáticamente
+		// TODO ApÃ©ndice de mÃ©todo generado automÃ¡ticamente
 		
 	}
 
 	@Override
 	public void windowDeactivated(WindowEvent e) {
-		// TODO Apéndice de método generado automáticamente
+		// TODO ApÃ©ndice de mÃ©todo generado automÃ¡ticamente
 		
 	}
 	
@@ -321,7 +321,7 @@ public class Principal extends JFrame implements ActionListener, WindowListener{
 			//Ponemos titulo al documento
 			documento.add(new Paragraph("Listado de "+table,
 							FontFactory.getFont("Tahoma",   // fuente
-							20,                            // tama�o
+							20,                            // tamaño
 							Font.BOLDITALIC,                   // estilo
 							BaseColor.BLUE)));
 			
@@ -337,16 +337,16 @@ public class Principal extends JFrame implements ActionListener, WindowListener{
 				
 				//Nos traemos los metadatos
 				ResultSetMetaData metaDatos = rset.getMetaData();
-				// Se obtiene el n�mero de columnas y se crea la tabla del pdf.
+				// Se obtiene el número de columnas y se crea la tabla del pdf.
 				int numeroColumnas = metaDatos.getColumnCount();
 				PdfPTable tabla = new PdfPTable(numeroColumnas);
 				
-				//A�ado la cabecera
+				//Añado la cabecera
 				for(int i=1;i<=numeroColumnas;i++){
 					tabla.addCell(metaDatos.getColumnLabel(i));
 				}
 
-				//A�adimos los empleados
+				//Añadimos los empleados
 				// Bucle para cada resultado en la consulta
 				while (rset.next())
 				{
